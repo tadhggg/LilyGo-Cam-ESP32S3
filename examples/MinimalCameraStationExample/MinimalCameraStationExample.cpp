@@ -78,8 +78,8 @@ void setup()
         }
     }
     wifiMulti.addAP(WIFI_SSID1, WIFI_SSID_PASSWORD1);
-    wifiMulti.addAP(WIFI_SSID2, WIFI_SSID_PASSWORD2);
-    wifiMulti.addAP(WIFI_SSID3, WIFI_SSID_PASSWORD3);
+    // wifiMulti.addAP(WIFI_SSID2, WIFI_SSID_PASSWORD2);
+    // wifiMulti.addAP(WIFI_SSID3, WIFI_SSID_PASSWORD3);
         
     Serial.println("Connecting Wifi...");
     while (WiFi.status() != WL_CONNECTED) {
