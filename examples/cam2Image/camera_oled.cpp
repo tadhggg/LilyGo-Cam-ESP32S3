@@ -9,6 +9,9 @@
 #define XPOWERS_CHIP_AXP2101
 #include "XPowersLib.h"
 #include "utilities.h"
+#include <U8g2lib.h>
+
+U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R2, U8X8_PIN_NONE);
 
 #define OLED_ADDR     0x3C
 
@@ -169,6 +172,8 @@ void loop() {
   display.clearDisplay();
   updatePixelRows(frameWidth, frameHeight, croppedHeight, heightOffset, frameBuffer);
   
+  u8g2.drawCircle(100, 180, 90);
+
   esp_camera_fb_return(frameBuffer);
   display.display();
 
