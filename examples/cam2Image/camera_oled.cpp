@@ -19,6 +19,11 @@
 #define FLIP_CAMERA      false   // flip image top/bottom
 #define INVERT_IMAGE     false   // swap black/white
 
+#define SEEK_BRIGHT_PIXELS true
+#define FOOD_SIZE 8
+#define FOOD_GRID_WIDTH (128/FOOD_SIZE)
+#define FOOD_GRID_HEIGHT (64/FOOD_SIZE)
+
 Adafruit_SSD1306 display(128, 64, &Wire, -1);
 XPowersPMU PMU;
 
@@ -175,7 +180,7 @@ void loop() {
 
   esp_camera_fb_return(frameBuffer);
 
-  int spriteX = 40;
+  int spriteX = 0;
   int spriteY = 20;
   display.drawBitmap(spriteX, spriteY, dogyBun_data,       32, 32, SSD1306_WHITE);
   display.drawBitmap(spriteX, spriteY, dogyBun_black_data, 32, 32, SSD1306_BLACK);
